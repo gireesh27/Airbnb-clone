@@ -4,10 +4,6 @@ import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { ListingCard } from "@/components/listing-card"
 import type { Listing } from "@/types/listing"
-<<<<<<< HEAD
-import { motion } from "framer-motion"
-=======
->>>>>>> fe79db3 (ok)
 
 export function SearchResults() {
   const searchParams = useSearchParams()
@@ -15,10 +11,6 @@ export function SearchResults() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-<<<<<<< HEAD
-  // Add this mock data at the top of the component, after the useState declarations
-=======
->>>>>>> fe79db3 (ok)
   const mockListings: Listing[] = [
     {
       id: 1,
@@ -238,10 +230,6 @@ export function SearchResults() {
       images: [
         { image_url: "/placeholder.svg?height=400&width=600&text=Lake+Cottage" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Lake+View" },
-<<<<<<< HEAD
-        { image_url: "/placeholder.svg?height=400&width=600&text=Lakeside" },
-=======
->>>>>>> fe79db3 (ok)
         { image_url: "/placeholder.svg?height=400&width=600&text=Dock" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Living+Room" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Bedroom" },
@@ -320,15 +308,9 @@ export function SearchResults() {
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="animate-pulse">
-<<<<<<< HEAD
-            <div className="rounded-lg bg-gray-200 dark:bg-gray-700 h-64 mb-2"></div>
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
-            <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
-=======
             <div className="rounded-lg bg-gray-200 h-64 mb-2"></div>
             <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
             <div className="h-4 bg-gray-200 rounded w-1/2"></div>
->>>>>>> fe79db3 (ok)
           </div>
         ))}
       </div>
@@ -340,42 +322,22 @@ export function SearchResults() {
   }
 
   if (listings.length === 0) {
-<<<<<<< HEAD
-    return (
-      <div className="mt-8 text-center text-gray-500 dark:text-gray-400">
-        No listings found. Try adjusting your search criteria.
-      </div>
-    )
-  }
-
-  return (
-    <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-=======
     return <div className="mt-8 text-center text-gray-500">No listings found. Try adjusting your search criteria.</div>
   }
 
   return (
     <div className="mt-8">
->>>>>>> fe79db3 (ok)
       <h2 className="text-xl font-semibold mb-4">
         {listings.length} {listings.length === 1 ? "stay" : "stays"}
         {searchParams.get("location") ? ` in ${searchParams.get("location")}` : ""}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
-        {listings.map((listing, index) => (
-          <ListingCard key={listing.id} listing={listing} index={index} />
-        ))}
-      </div>
-    </motion.div>
-=======
         {listings.map((listing) => (
           <ListingCard key={listing.id} listing={listing} />
         ))}
       </div>
     </div>
->>>>>>> fe79db3 (ok)
   )
 }
 
