@@ -7,10 +7,16 @@ import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
+<<<<<<< HEAD
 import { Star, Users, Wifi, Home, Award, Heart } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
+=======
+import { Star, Users, Wifi, Home, Heart } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Input } from "@/components/ui/input"
+>>>>>>> fe79db3 (ok)
 
 interface ListingDetailProps {
   id: string
@@ -23,7 +29,10 @@ export function ListingDetail({ id }: ListingDetailProps) {
   const [checkIn, setCheckIn] = useState<Date | undefined>(undefined)
   const [checkOut, setCheckOut] = useState<Date | undefined>(undefined)
   const [guests, setGuests] = useState("1")
+<<<<<<< HEAD
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+=======
+>>>>>>> fe79db3 (ok)
 
   // Add this mock data at the top of the component, after the useState declarations
   const mockListings: Listing[] = [
@@ -245,10 +254,17 @@ export function ListingDetail({ id }: ListingDetailProps) {
       images: [
         { image_url: "/placeholder.svg?height=400&width=600&text=Lake+Cottage" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Lake+View" },
+<<<<<<< HEAD
         { image_url: "/placeholder.svg?height=400&width=600&text=Lakeside" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Dock" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Living+Room" },
         { image_url: "/placeholder.svg?height=400&width=600&text=Bedroom" },
+=======
+        { image_url: "/placeholder.svg?height=400&width=600&text"  },
+        { image_url: "/placeholder.svg?height=400&width=600&text=Dock" },
+        { image_url: "/placeholder.svg?height=400&width=600&text=Living+Room" },
+        { image_url: "/placeholder.svg?height=400&width=600&text=Bedroom" }
+>>>>>>> fe79db3 (ok)
       ],
       amenities: ["Wifi", "Kitchen", "Fireplace", "Lake access", "Free parking"],
     },
@@ -261,6 +277,7 @@ export function ListingDetail({ id }: ListingDetailProps) {
       setError(null)
 
       try {
+<<<<<<< HEAD
         // In a real application, we would fetch from the backend
         // const response = await fetch(`http://localhost:8000/api/listings/${id}/`);
 
@@ -269,6 +286,10 @@ export function ListingDetail({ id }: ListingDetailProps) {
         await new Promise((resolve) => setTimeout(resolve, 1000))
 
         // Find the listing with the matching ID
+=======
+
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+>>>>>>> fe79db3 (ok)
         const foundListing = mockListings.find((listing) => listing.id.toString() === id)
 
         if (!foundListing) {
@@ -290,6 +311,7 @@ export function ListingDetail({ id }: ListingDetailProps) {
   if (loading) {
     return (
       <div className="mt-8 animate-pulse">
+<<<<<<< HEAD
         <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-4"></div>
         <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded mb-4"></div>
         <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
@@ -302,6 +324,20 @@ export function ListingDetail({ id }: ListingDetailProps) {
             <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
           </div>
           <div className="h-64 bg-gray-200 dark:bg-gray-700 rounded"></div>
+=======
+        <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
+        <div className="h-96 bg-gray-200 rounded mb-4"></div>
+        <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+        <div className="h-4 bg-gray-200 rounded w-1/2 mb-8"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          </div>
+          <div className="h-64 bg-gray-200 rounded"></div>
+>>>>>>> fe79db3 (ok)
         </div>
       </div>
     )
@@ -312,7 +348,11 @@ export function ListingDetail({ id }: ListingDetailProps) {
   }
 
   if (!listing) {
+<<<<<<< HEAD
     return <div className="mt-8 text-center text-gray-500 dark:text-gray-400">Listing not found</div>
+=======
+    return <div className="mt-8 text-center text-gray-500">Listing not found</div>
+>>>>>>> fe79db3 (ok)
   }
 
   const {
@@ -337,12 +377,16 @@ export function ListingDetail({ id }: ListingDetailProps) {
   const total = subtotal + serviceFee
 
   return (
+<<<<<<< HEAD
     <motion.div
       className="mt-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
+=======
+    <div className="mt-8">
+>>>>>>> fe79db3 (ok)
       <h1 className="text-2xl font-bold mb-4">{title}</h1>
 
       <div className="flex items-center justify-between mb-4">
@@ -368,6 +412,7 @@ export function ListingDetail({ id }: ListingDetailProps) {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Enhanced Image gallery with animation */}
       <div className="mb-8">
         <div className="relative aspect-video overflow-hidden rounded-xl">
@@ -459,21 +504,62 @@ export function ListingDetail({ id }: ListingDetailProps) {
             ))}
           </div>
         )}
+=======
+      {/* Image gallery */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
+        <div className="relative aspect-square overflow-hidden rounded-l-xl">
+          <Image
+            src={images && images.length > 0 ? images[0].image_url : `/placeholder.svg?height=600&width=600`}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {[1, 2, 3, 4].map((index) => (
+            <div key={index} className="relative aspect-square overflow-hidden rounded-r-xl">
+              <Image
+                src={
+                  images && images.length > index
+                    ? images[index].image_url
+                    : `/placeholder.svg?height=300&width=300&text=Image+${index + 1}`
+                }
+                alt={`${title} - Image ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                priority
+              />
+            </div>
+          ))}
+        </div>
+>>>>>>> fe79db3 (ok)
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="md:col-span-2">
+<<<<<<< HEAD
           <motion.div
             className="flex items-center justify-between pb-6 border-b dark:border-gray-800"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
+=======
+          <div className="flex items-center justify-between pb-6 border-b">
+>>>>>>> fe79db3 (ok)
             <div>
               <h2 className="text-xl font-semibold">
                 {property_type} hosted by {host?.name || "Host"}
               </h2>
+<<<<<<< HEAD
               <p className="text-gray-500 dark:text-gray-400">{address}</p>
+=======
+              <p className="text-gray-500">{address}</p>
+>>>>>>> fe79db3 (ok)
             </div>
 
             {host?.image_url && (
@@ -484,6 +570,7 @@ export function ListingDetail({ id }: ListingDetailProps) {
                   fill
                   className="object-cover"
                 />
+<<<<<<< HEAD
                 {host.is_superhost && (
                   <div className="absolute bottom-0 right-0 bg-rose-500 text-white p-1 rounded-full">
                     <Award className="h-3 w-3" />
@@ -509,10 +596,23 @@ export function ListingDetail({ id }: ListingDetailProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
+=======
+              </div>
+            )}
+          </div>
+
+          <div className="py-6 border-b">
+            <h2 className="text-xl font-semibold mb-4">About this place</h2>
+            <p className="text-gray-700 whitespace-pre-line">{description}</p>
+          </div>
+
+          <div className="py-6 border-b">
+>>>>>>> fe79db3 (ok)
             <h2 className="text-xl font-semibold mb-4">What this place offers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {amenities &&
                 amenities.map((amenity, index) => (
+<<<<<<< HEAD
                   <motion.div
                     key={index}
                     className="flex items-center"
@@ -539,12 +639,33 @@ export function ListingDetail({ id }: ListingDetailProps) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
+=======
+                  <div key={index} className="flex items-center">
+                    {amenity.toLowerCase().includes("wifi") ? (
+                      <Wifi className="h-5 w-5 mr-4 text-gray-500" />
+                    ) : (
+                      <Home className="h-5 w-5 mr-4 text-gray-500" />
+                    )}
+                    <span>{amenity}</span>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="md:col-span-1">
+          <div className="sticky top-8 border rounded-xl shadow-lg p-6">
+>>>>>>> fe79db3 (ok)
             <div className="flex justify-between items-start mb-6">
               <div>
                 <span className="text-xl font-semibold">
                   {currency} {price_per_night}
                 </span>
+<<<<<<< HEAD
                 <span className="text-gray-500 dark:text-gray-400"> night</span>
+=======
+                <span className="text-gray-500"> night</span>
+>>>>>>> fe79db3 (ok)
               </div>
 
               {ratings && (
@@ -555,8 +676,13 @@ export function ListingDetail({ id }: ListingDetailProps) {
               )}
             </div>
 
+<<<<<<< HEAD
             <div className="border dark:border-gray-800 rounded-t-lg">
               <div className="grid grid-cols-2 divide-x dark:divide-gray-800">
+=======
+            <div className="border rounded-t-lg">
+              <div className="grid grid-cols-2 divide-x">
+>>>>>>> fe79db3 (ok)
                 <div className="p-3">
                   <label className="block text-xs font-semibold">CHECK-IN</label>
                   <Popover>
@@ -592,7 +718,11 @@ export function ListingDetail({ id }: ListingDetailProps) {
                 </div>
               </div>
 
+<<<<<<< HEAD
               <div className="p-3 border-t dark:border-gray-800">
+=======
+              <div className="p-3 border-t">
+>>>>>>> fe79db3 (ok)
                 <label className="block text-xs font-semibold">GUESTS</label>
                 <div className="flex items-center">
                   <Users className="h-4 w-4 text-gray-400 mr-2" />
@@ -624,7 +754,11 @@ export function ListingDetail({ id }: ListingDetailProps) {
                   {currency} {serviceFee.toFixed(2)}
                 </span>
               </p>
+<<<<<<< HEAD
               <div className="border-t dark:border-gray-800 mt-4 pt-4">
+=======
+              <div className="border-t mt-4 pt-4">
+>>>>>>> fe79db3 (ok)
                 <p className="flex justify-between font-semibold">
                   <span>Total</span>
                   <span>
@@ -633,10 +767,17 @@ export function ListingDetail({ id }: ListingDetailProps) {
                 </p>
               </div>
             </div>
+<<<<<<< HEAD
           </motion.div>
         </div>
       </div>
     </motion.div>
+=======
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> fe79db3 (ok)
   )
 }
 

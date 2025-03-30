@@ -75,6 +75,7 @@
   }
 }
 
+<<<<<<< HEAD
 /* Custom animations */
 @keyframes float {
   0% {
@@ -92,3 +93,5 @@
   animation: float 6s ease-in-out infinite;
 }
 
+=======
+>>>>>>> fe79db3 (ok)
